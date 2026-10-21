@@ -195,11 +195,11 @@ public class UserRegistrationJSP {
             server.start();
             System.out.println("\nLive Embedded JSP Registration Server running at: http://localhost:" + PORT + "/");
 
-            if (args.length == 0) {
-                Thread.sleep(1500);
-                server.stop(0);
-                System.out.println("Live simulation test completed successfully.");
-            }
+            System.out.println("Server started successfully!");
+            System.out.println("Open in browser: http://localhost:" + PORT + "/");
+            System.out.println("Keep this terminal open. Press Ctrl+C to stop the server.");
+
+            new java.util.concurrent.CountDownLatch(1).await();
         } catch (Exception e) {
             System.out.println("Server note: " + e.getMessage());
         }
